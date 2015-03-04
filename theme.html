@@ -114,7 +114,7 @@
           <nav>
             <ul class="nav nav-pills nav-top">
               <li>
-                <a href="contact-us.html"><i class="fa fa-angle-right"></i>Contact Us</a>
+                <a href="http://www.agnie.net/contact-us.html"><i class="fa fa-angle-right"></i>Contact Us</a>
               </li>
               <li class="phone">
                 <span><i class="fa fa-phone"></i>(+91) 9823-2415-35 </span>
@@ -135,48 +135,55 @@
             <nav class="nav-main mega-menu">
               <ul class="nav nav-pills nav-main" id="mainMenu">
                 <li >
-                  <a href="index.html">Home</a>
+                  <a href="http://www.agnie.net/index.html">Home</a>
                 </li>
-                <li class="dropdown active" >
+                <li class="dropdown" >
                   <a class="dropdown-toggle" href="#">
                     Products
                     <i class="fa fa-angle-down"></i>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="adnetwork.html">White label Ad Network ( AdNitwork ) </a></li>
-                    <li><a href="publisher-ad-server.html">Publisher Ad Server ( AdSirver )</a></li>
+                    <li><a href="http://www.agnie.net/adnetwork.html">White label Ad Network ( AdNitwork ) </a></li>
+                    <li><a href="http://www.agnie.net/publisher-ad-server.html">Publisher Ad Server ( AdSirver )</a></li>
                   </ul>
                 </li>             
-                <!--li>
+                <li class="active">
                   <a href="http://blog.agnie.net">Blog</a>
-                </li-->
+                </li>
                 <li >
-                  <a href="about-us.html">About Us</a>
+                  <a href="http://www.agnie.net/about-us.html">About Us</a>
                 </li>               
                 <li>
-                  <a href="contact-us.html">Contact Us</a>
+                  <a href="http://www.agnie.net/contact-us.html">Contact Us</a>
                 </li>
               </ul>
             </nav>
           </div>
         </div>
       </header>
-          <div role="main" class="main">
-
+      <div role="main" class="main">
         <section class="page-top">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <ul class="breadcrumb">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="#">Products</a></li>
-                  <li class="active">White label Ad Network</li>
+                  <li><a href="http://www.agnie.net/index.html">Home</a></li>
+                  {% if is_home or is_tag %}
+                  <li class="active">Blog</li>
+                  {% elif is_post %}
+                  <li><a href="http://blog.agnie.net">Blog</a></li>
+                  <li class="active">{{ post.title }}</li>
+                  {% endif %}
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <h2>White label Ad Network </h2>
+                {% if is_home or is_tag %}
+                <h2>Blog</h2>
+                {% elif is_post %}
+                <h2>{{ post.title }}</h2>
+                {% endif %}
               </div>
             </div>
           </div>
