@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="http://www.agnie.net/vendor/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="http://www.agnie.net/vendor/iconmoon/style.css">
   <link rel="stylesheet" href="{{ static('themes/_assets/fontawesome/css/font-awesome.min.css') }}">
-  
+
   <link rel="stylesheet" href="http://www.agnie.net/vendor/owl-carousel/owl.carousel.css" media="screen">
   <link rel="stylesheet" href="http://www.agnie.net/vendor/owl-carousel/owl.theme.css" media="screen">
   <link rel="stylesheet" href="http://www.agnie.net/vendor/magnific-popup/magnific-popup.css" media="screen">
@@ -389,25 +389,90 @@
         {% endif %}
       -->
       </div>
-
-      <div class="row">
-        <div class="span10 offset1">
-          <footer>
-            &copy; <a href="/">{{ site.name }}</a>. Powered by <a href="http://postach.io" target="_blank">Postach.io</a>
-            {% if not is_login %}
-              <ul class="inline pull-right">
-                <li><a href="/">Blog</a></li>
-                {% if pages %}
-                {% for page in pages %}
-                <li><a href="{{ page.permalink }}" class="{{ set_active(page.permalink) }}">{{ page.title }}</a></li>
-                {% endfor %}
-                {% endif %}
-              </ul>
-            {% endif %}
-          </footer>
-        </div>
-      </div>
     </div>
+    <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-ribbon">
+              <span>Get in Touch</span>
+            </div>
+            <div class="col-md-3">
+              <div class="newsletter">
+                <h4>Newsletter</h4>
+                <p>Subsribe to our newsletter and keep yourself updated with our offerings.</p>
+
+                <div class="alert alert-success hidden" id="newsletterSuccess">
+                  <strong>Success!</strong> You've been added to our email list.
+                </div>
+
+                <div class="alert alert-danger hidden" id="newsletterError">
+                </div>
+                <form action="http://agnie.us8.list-manage.com/subscribe/post?u=90ab482f13a5ca05bff010e8c&amp;id=1af02cee5b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" role="form">
+                  <div class="input-group">
+                    <input type="email" name="EMAIL" id="mce-EMAIL" class="form-control control-simply" placeholder="Email Address" required="">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" name="subscribe" id="mc-embedded-subscribe" type="submit">
+                        Go!
+                      </button>
+                    </span>
+                  </div>
+                  <div style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_90ab482f13a5ca05bff010e8c_1af02cee5b" tabindex="-1" value="" />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <h4>Latest Tweet</h4>
+              <div id="tweet" class="twitter" data-account-id="agniesoftware">
+                <p>Please wait..</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-details">
+                <h4>Contact Us</h4>
+                <ul class="contact">
+                  <li><p><i class="fa fa-map-marker"></i> <strong>Address:</strong> Office No - 203 , 2nd Floor Elite Premio, Balewadi, Pune, Maharashtra, India - 411045  </p></li>
+                  <li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> (+91) 9823-2415-35 </p></li>
+                  <li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:contact@agnie.net">contact@agnie.net</a></p></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <ul class="social-icons">
+                  <li class="facebook"><a href="https://www.facebook.com/agniesoftware" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
+                  <li class="twitter"><a href="https://twitter.com/agniesoftware" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
+                  <li class="linkedin"><a href="https://www.linkedin.com/company/agnie-software" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <a href="index.html" class="logo">
+                  <img alt="Porto Website Template" class="img-responsive" src="{{ assets('img/agnie-logo-footer.png') }}">
+                </a>
+              </div>
+              <div class="col-md-7">
+                <p>© Copyright 2014 -15. Agnie Media Software Pvt. Ltd.</p>
+              </div>
+              <div class="col-md-4">
+                <nav id="sub-menu">
+                  <ul>
+                    <!--li><a href="page-faq.html">FAQ's</a></li-->
+                    <li><a href="contact-us.html">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 </div>
     {% endif %}
     <!-- Libs -->
