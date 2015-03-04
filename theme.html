@@ -55,7 +55,11 @@
 
   <!-- Head Libs -->
   <script src="http://www.agnie.net/vendor/modernizr.js"></script>
-
+  <style type="text/css">
+    h2 a:hover, h2 a:focus{
+      text-decoration: overline !important;
+    }
+  </style>
     <!--[if IE 7]>
       <link href="http://postach.io/static/themes/_assets/fontawesome/css/font-awesome-ie7.min.css" rel="stylesheet">
     <![endif]-->
@@ -100,7 +104,7 @@
       <header id="header">
         <div class="container">
           <h1 class="logo">
-            <a href="index.html">
+            <a href="http://www.agnie.net/index.html">
               <img alt="Porto" width="150" height="90" data-sticky-width="110" data-sticky-height="66" src="http://www.agnie.net/img/agnie_logo_big.png">
             </a>
           </h1>
@@ -196,8 +200,8 @@
 
             {% if posts %}
             {% for post in posts %}
-            <div class="row post">
-              <div class="span6">
+            <div class="post">
+              <div>
                 <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
                 <p class="muted">Posted on {{ post.created_at|format_date }}</p>
 
@@ -503,7 +507,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-1">
-                <a href="index.html" class="logo">
+                <a href="http://www.agnie.net/index.html" class="logo">
                   <img alt="Porto Website Template" class="img-responsive" src="{{ assets('img/agnie-logo-footer.png') }}">
                 </a>
               </div>
